@@ -1,0 +1,37 @@
+body {
+  margin: auto;
+}
+
+.grid {
+ width: 900px ;
+ height: 600px;
+ margin: auto;
+}
+
+.card-back {
+  padding: 10px;
+  height: 200px;
+  width: 150px;
+  text-align: center;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(107,107,201,1) 47%, rgba(0,212,255,1) 100%);
+  border: solid;
+  border-color: black;
+} 
+
+.card-back:hover{
+  border: solid;
+  border-color: blueviolet;
+}
+
+.card-front {
+  padding: 10px;
+  height: 200px;
+  width: 150px;
+  text-align: center;
+  background-color:green;
+  border: solid;
+  border-color: transparent;
+} 
+
+
