@@ -80,6 +80,7 @@ class Grid extends Component {
     if (frontCards === 2) {
       if (number[0] - number[1] === 0) {
         console.log("same symbol");
+        this.setPairFound();
       } else {
         setTimeout(() => this.hideAllCards(), 2000);
       }
@@ -90,7 +91,20 @@ class Grid extends Component {
     let cardsTable = this.state.cards.slice();
     let i = cardsTable.length;
     while (i--) {
-      cardsTable[i].face = "back";
+      if (cardsTable[i].face != "found") {
+        cardsTable[i].face = "back";
+      }
+    }
+    this.setState({ cards: cardsTable });
+  }
+
+  setPairFound() {
+    let cardsTable = this.state.cards.slice();
+    let i = cardsTable.length;
+    while (i--) {
+      if (cardsTable[i].face === "front") {
+        cardsTable[i].face = "found";
+      }
     }
     this.setState({ cards: cardsTable });
   }

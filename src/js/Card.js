@@ -13,7 +13,8 @@ class Card extends React.Component {
   render() {
     if (this.props.face == "front") {
       return <div className={`card-front`}>{this.props.number}</div>;
-    } else {
+    }
+    if (this.props.face == "back") {
       return (
         <div
           className={`card-back`}
@@ -21,6 +22,8 @@ class Card extends React.Component {
           onClick={this.showCard}
         ></div>
       );
+    } else {
+      return <div className={`card-found`}>{this.props.number}</div>;
     }
   }
 }
