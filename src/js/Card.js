@@ -16,11 +16,9 @@ class Card extends React.Component {
     }
     if (this.props.face == "back") {
       return (
-        <div
-          className={`card-back`}
-          id={this.props.id}
-          onClick={this.showCard}
-        ></div>
+        <div className={`card-back`} id={this.props.id} onClick={this.showCard}>
+          {this.props.number}
+        </div>
       );
     } else {
       return <div className={`card-found`}>{this.props.number}</div>;

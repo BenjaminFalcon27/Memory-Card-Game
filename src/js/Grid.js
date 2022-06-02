@@ -68,6 +68,18 @@ class Grid extends Component {
     return numberArray;
   }
 
+  triggerGameFinished() {
+    let foundCards = 0;
+    for (let j = 0; j < 18; j++) {
+      if (this.state.cards[j].face === "found") {
+        foundCards++;
+      }
+    }
+    if (foundCards === 18) {
+      console.log("game finished");
+    }
+  }
+
   triggerSameCards(number1, number2) {
     if (number1 === number2) {
       return true;
@@ -79,7 +91,6 @@ class Grid extends Component {
     let number = this.checkCardNumber().slice();
     if (frontCards === 2) {
       if (number[0] - number[1] === 0) {
-        console.log("same symbol");
         this.setPairFound();
       } else {
         setTimeout(() => this.hideAllCards(), 2000);
@@ -125,8 +136,9 @@ class Grid extends Component {
   render() {
     return (
       <div className="container">
-        {/* <button onClick={() => this.showAllCards()}>Show All</button> */}
         {this.renderTable()}
+        {this.triggerTwoFrontCards()}
+        {this.triggerGameFinished()}
       </div>
     );
   }
@@ -156,7 +168,6 @@ class Grid extends Component {
           <tr>{this.renderRow(0)}</tr>
           <tr>{this.renderRow(1)}</tr>
           <tr>{this.renderRow(2)}</tr>
-          {this.triggerTwoFrontCards()}
         </tbody>
       </table>
     );
