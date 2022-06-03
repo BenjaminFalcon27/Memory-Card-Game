@@ -98,7 +98,7 @@ class Grid extends Component {
         this.setPairFound();
         this.setState({ clickAllowed: true });
       } else {
-        setTimeout(() => this.hideAllCards(), 2000);
+        setTimeout(() => this.hideAllCards(), 500);
       }
     }
     this.triggerGameFinished();
