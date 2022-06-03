@@ -1,3 +1,6 @@
-Welcome to my Card Game project
+It's me. Benji! 
 
-Have fun
+Have fun with my Memory Card Game with the Mario theme.
+
+
+
