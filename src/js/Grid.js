@@ -76,7 +76,7 @@ class Grid extends Component {
       }
     }
     if (foundCards === 18) {
-      console.log("game finished");
+      alert("game finished");
     }
   }
 
@@ -96,13 +96,14 @@ class Grid extends Component {
         setTimeout(() => this.hideAllCards(), 2000);
       }
     }
+    this.triggerGameFinished();
   }
 
   hideAllCards() {
     let cardsTable = this.state.cards.slice();
     let i = cardsTable.length;
     while (i--) {
-      if (cardsTable[i].face != "found") {
+      if (cardsTable[i].face !== "found") {
         cardsTable[i].face = "back";
       }
     }
@@ -130,17 +131,11 @@ class Grid extends Component {
       }
     }
 
-    this.setState({ cards: newCards });
+    this.setState({ cards: newCards }, () => this.triggerTwoFrontCards());
   }
 
   render() {
-    return (
-      <div className="container">
-        {this.renderTable()}
-        {this.triggerTwoFrontCards()}
-        {this.triggerGameFinished()}
-      </div>
-    );
+    return <div className="container">{this.renderTable()}</div>;
   }
 
   renderRow(rowNumber) {

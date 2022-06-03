@@ -1,22 +1,28 @@
 body {
   margin: auto;
+  background-color: #548CFF;
 }
 
 .grid {
  width: 900px ;
  height: 600px;
  margin: auto;
+ border: solid;
+ padding-left: 50px;
+ padding-right: 50px;
+ padding-top: 10px;
 }
 
 .card-back {
   padding: 10px;
   height: 200px;
-  width: 150px;
+  width: 115px;
   text-align: center;
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(107,107,201,1) 47%, rgba(0,212,255,1) 100%);
   border: solid;
-  border-color: black;
+  border-color: transparent;
+  background: url(/public/Mario.png);
+  background-size:contain;
+  background-color: #FBD000;
 } 
 
 .card-back:hover{
@@ -27,7 +33,7 @@ body {
 .card-front {
   padding: 10px;
   height: 200px;
-  width: 150px;
+  width: 115px;
   text-align: center;
   background-color:green;
   border: solid;
@@ -37,11 +43,9 @@ body {
 .card-found {
   padding: 10px;
   height: 200px;
-  width: 150px;
+  width: 115px;
   text-align: center;
   background-color:red;
   border: solid;
   border-color: transparent;
 }
-
-
