@@ -6,25 +6,26 @@ class Grid extends Component {
     super(props);
     this.state = {
       cards: [
-        { id: 1, number: 1, face: "back" },
-        { id: 2, number: 2, face: "back" },
-        { id: 3, number: 3, face: "back" },
-        { id: 4, number: 4, face: "back" },
-        { id: 5, number: 5, face: "back" },
-        { id: 6, number: 6, face: "back" },
-        { id: 7, number: 7, face: "back" },
-        { id: 8, number: 8, face: "back" },
-        { id: 9, number: 9, face: "back" },
-        { id: 10, number: 9, face: "back" },
-        { id: 11, number: 8, face: "back" },
-        { id: 12, number: 7, face: "back" },
-        { id: 13, number: 6, face: "back" },
-        { id: 14, number: 5, face: "back" },
-        { id: 15, number: 4, face: "back" },
-        { id: 16, number: 3, face: "back" },
-        { id: 17, number: 2, face: "back" },
-        { id: 18, number: 1, face: "back" },
+        { id: 1, number: "FlowerFire", face: "back" },
+        { id: 2, number: "Up", face: "back" },
+        { id: 3, number: "Blooper", face: "back" },
+        { id: 4, number: "Bullet", face: "back" },
+        { id: 5, number: "Chain", face: "back" },
+        { id: 6, number: "FlowerIce", face: "back" },
+        { id: 7, number: "Goomba", face: "back" },
+        { id: 8, number: "Mush", face: "back" },
+        { id: 9, number: "Giant", face: "back" },
+        { id: 10, number: "Giant", face: "back" },
+        { id: 11, number: "Mush", face: "back" },
+        { id: 12, number: "Goomba", face: "back" },
+        { id: 13, number: "FlowerIce", face: "back" },
+        { id: 14, number: "Chain", face: "back" },
+        { id: 15, number: "Bullet", face: "back" },
+        { id: 16, number: "Blooper", face: "back" },
+        { id: 17, number: "Up", face: "back" },
+        { id: 18, number: "FlowerFire", face: "back" },
       ],
+      clickAllowed: true,
     };
   }
 
@@ -76,7 +77,7 @@ class Grid extends Component {
       }
     }
     if (foundCards === 18) {
-      alert("game finished");
+      setTimeout(() => alert("game finished"), 500);
     }
   }
 
@@ -90,8 +91,10 @@ class Grid extends Component {
     let frontCards = this.countFrontCards();
     let number = this.checkCardNumber().slice();
     if (frontCards === 2) {
-      if (number[0] - number[1] === 0) {
+      this.setState({ clickAllowed: false });
+      if (number[0] === number[1]) {
         this.setPairFound();
+        this.setState({ clickAllowed: true });
       } else {
         setTimeout(() => this.hideAllCards(), 2000);
       }
@@ -107,7 +110,8 @@ class Grid extends Component {
         cardsTable[i].face = "back";
       }
     }
-    this.setState({ cards: cardsTable });
+
+    this.setState({ cards: cardsTable, clickAllowed: true });
   }
 
   setPairFound() {
@@ -122,20 +126,27 @@ class Grid extends Component {
   }
 
   showCard(id) {
-    let newCards = this.state.cards.slice();
+    if (this.state.clickAllowed) {
+      let newCards = this.state.cards.slice();
 
-    for (let j = 0; j < 18; j++) {
-      if (newCards[j].id === id) {
-        newCards[j].face = "front";
-        break;
+      for (let j = 0; j < 18; j++) {
+        if (newCards[j].id === id) {
+          newCards[j].face = "front";
+          break;
+        }
       }
-    }
 
-    this.setState({ cards: newCards }, () => this.triggerTwoFrontCards());
+      this.setState({ cards: newCards }, () => this.triggerTwoFrontCards());
+    }
   }
 
   render() {
-    return <div className="container">{this.renderTable()}</div>;
+    return (
+      <div>
+        {this.renderClouds()}
+        <div className="container">{this.renderTable()}</div>
+      </div>
+    );
   }
 
   renderRow(rowNumber) {
@@ -159,13 +170,43 @@ class Grid extends Component {
   renderTable() {
     return (
       <table className="grid">
-        <tbody>
+        <tbody className="body-tab">
           <tr>{this.renderRow(0)}</tr>
           <tr>{this.renderRow(1)}</tr>
           <tr>{this.renderRow(2)}</tr>
         </tbody>
       </table>
     );
+  }
+
+  renderClouds() {
+    return (
+      <div id="background-wrap">
+        <div className="x1">
+          <div className="cloud"></div>
+        </div>
+
+        <div className="x2">
+          <div className="cloud"></div>
+        </div>
+
+        <div className="x3">
+          <div className="cloud"></div>
+        </div>
+
+        <div className="x4">
+          <div className="cloud"></div>
+        </div>
+
+        <div className="x5">
+          <div className="cloud"></div>
+        </div>
+      </div>
+    );
+  }
+
+  renderPlayAgain() {
+    return <div className="play-again"></div>;
   }
 }
 

@@ -4,4 +4,24 @@
 .game-title {
     margin: auto;
     text-align: center;
+    font-family: 'New Super Mario Font U', sans-serif;
+    font-size: 60px;
+    position: relative;
+    text-transform: uppercase;
+    animation: waviy 1s infinite;
+    animation-delay: calc(.1s * var(--i));
+    background-image: linear-gradient(to left, violet, indigo,  red,  yellow, orange);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
 }
+
+@keyframes waviy {
+    0%,40%,100% {
+      transform: translateY(0px)
+    }
+    20% {
+      transform: translateY(-10px)
+      
+    }
+  }
+

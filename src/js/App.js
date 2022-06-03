@@ -5,10 +5,17 @@ import Grid from "./Grid";
 function App() {
   return (
     <div className="App">
+      <link
+        href="http://fonts.cdnfonts.com/css/new-super-mario-font-u"
+        rel="stylesheet"
+      ></link>
+      <style>
+        @import url('http://fonts.cdnfonts.com/css/new-super-mario-font-u');
+      </style>
       <header className="App-header">
         <h1 className="game-title">Memory Card Game</h1>
-        <Grid />
       </header>
+      <Grid />
     </div>
   );
 }

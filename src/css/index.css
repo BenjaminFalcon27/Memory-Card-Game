@@ -1,16 +1,24 @@
 body {
   margin: auto;
-  background-color: #548CFF;
+  background: #00b4ff;
+  color: #333;
+  overflow-x: hidden;
+}
+#background-wrap {
+  bottom: 0;
+left: 0;
+padding-top: 50px;
+position: fixed;
+right: 0;
+top: 0;
+z-index: -1;
 }
 
 .grid {
  width: 900px ;
  height: 600px;
  margin: auto;
- border: solid;
- padding-left: 50px;
- padding-right: 50px;
- padding-top: 10px;
+ padding: 10px;
 }
 
 .card-back {
@@ -19,15 +27,16 @@ body {
   width: 115px;
   text-align: center;
   border: solid;
-  border-color: transparent;
-  background: url(/public/Mario.png);
-  background-size:contain;
-  background-color: #FBD000;
+  border-color: black;
+  background: url(/public/backcard.png);
+  background-color: #fca43c;
+  background-repeat: no-repeat;
+  background-position: center;
 } 
 
 .card-back:hover{
   border: solid;
-  border-color: blueviolet;
+  border-color: #E52521;
 }
 
 .card-front {
@@ -35,7 +44,7 @@ body {
   height: 200px;
   width: 115px;
   text-align: center;
-  background-color:green;
+  background-color:white;
   border: solid;
   border-color: transparent;
 } 
@@ -45,7 +54,211 @@ body {
   height: 200px;
   width: 115px;
   text-align: center;
-  background-color:red;
   border: solid;
   border-color: transparent;
+  opacity: 0.5;
+}
+
+.anti-cheat {
+  background:red;
+  position:absolute;
+  top:0px;
+  right:0px;
+  bottom:0px;
+  left:0px;
+}
+
+
+/* CARDS */
+
+.FlowerFire {
+  background: url(/public/card-img/FlowerFire.png);
+  background-color: #e2c16d;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.Up {
+  background: url(/public/card-img/Up.png);
+  background-color: #e2c16d;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.Blooper {
+  background: url(/public/card-img/Blooper.png);
+  background-color: #e2c16d;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.Bullet {
+  background: url(/public/card-img/Bullet.png);
+  background-color: #e2c16d;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.FlowerIce {
+  background: url(/public/card-img/FlowerIce.png);
+  background-color: #e2c16d;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.Giant {
+  background: url(/public/card-img/Giant.png);
+  background-color: #e2c16d;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.Goomba {
+  background: url(/public/card-img/Goomba.png);
+  background-color: #e2c16d;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.Mush {
+  background: url(/public/card-img/Mush.png);
+  background-color: #e2c16d;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.Chain {
+  background: url(/public/card-img/Chain.png);
+  background-color: #e2c16d;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* KEYFRAMES */
+
+@-webkit-keyframes animateCloud {
+  0% {
+      margin-left: -1000px;
+  }
+  100% {
+      margin-left: 100%;
+  }
+}
+
+@-moz-keyframes animateCloud {
+  0% {
+      margin-left: -1000px;
+  }
+  100% {
+      margin-left: 100%;
+  }
+}
+
+@keyframes animateCloud {
+  0% {
+      margin-left: -1000px;
+  }
+  100% {
+      margin-left: 100%;
+  }
+}
+
+
+
+/* ANIMATIONS */
+
+.x1 {
+-webkit-animation: animateCloud 35s linear infinite;
+-moz-animation: animateCloud 35s linear infinite;
+animation: animateCloud 35s linear infinite;
+
+-webkit-transform: scale(0.65);
+-moz-transform: scale(0.65);
+transform: scale(0.65);
+}
+
+.x2 {
+-webkit-animation: animateCloud 20s linear infinite;
+-moz-animation: animateCloud 20s linear infinite;
+animation: animateCloud 20s linear infinite;
+
+-webkit-transform: scale(0.3);
+-moz-transform: scale(0.3);
+transform: scale(0.3);
+}
+
+.x3 {
+-webkit-animation: animateCloud 30s linear infinite;
+-moz-animation: animateCloud 30s linear infinite;
+animation: animateCloud 30s linear infinite;
+
+-webkit-transform: scale(0.5);
+-moz-transform: scale(0.5);
+transform: scale(0.5);
+}
+
+.x4 {
+-webkit-animation: animateCloud 18s linear infinite;
+-moz-animation: animateCloud 18s linear infinite;
+animation: animateCloud 18s linear infinite;
+
+-webkit-transform: scale(0.4);
+-moz-transform: scale(0.4);
+transform: scale(0.4);
+}
+
+.x5 {
+-webkit-animation: animateCloud 25s linear infinite;
+-moz-animation: animateCloud 25s linear infinite;
+animation: animateCloud 25s linear infinite;
+
+-webkit-transform: scale(0.55);
+-moz-transform: scale(0.55);
+transform: scale(0.55);
+}
+
+/* OBJECTS */
+
+.cloud {
+background: #fff;
+background: -moz-linear-gradient(top,  #fff 5%, #f1f1f1 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,#fff), color-stop(100%,#f1f1f1));
+background: -webkit-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+background: -o-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+background: -ms-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+background: linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#f1f1f1',GradientType=0 );
+
+-webkit-border-radius: 100px;
+-moz-border-radius: 100px;
+border-radius: 100px;
+
+-webkit-box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+-moz-box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+
+height: 120px;
+position: relative;
+width: 350px;
+}
+
+.cloud:after, .cloud:before {
+  background: #fff;
+content: '';
+position: absolute;
+z-indeX: -1;
+}
+
+.cloud:after {
+-webkit-border-radius: 100px;
+-moz-border-radius: 100px;
+border-radius: 100px;
+
+height: 100px;
+left: 50px;
+top: -50px;
+width: 100px;
+}
+
+.cloud:before {
+-webkit-border-radius: 200px;
+-moz-border-radius: 200px;
+border-radius: 200px;
+
+width: 180px;
+height: 180px;
+right: 50px;
+top: -90px;
 }
