@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Card from "./Card";
+import { FaGithub } from "react-icons/fa";
 
 class Grid extends Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class Grid extends Component {
         { id: 18, number: "FlowerFire", face: "back" },
       ],
       clickAllowed: true,
+      showRestart: false,
     };
   }
 
@@ -77,7 +79,7 @@ class Grid extends Component {
       }
     }
     if (foundCards === 18) {
-      setTimeout(() => alert("game finished"), 500);
+      setTimeout(() => this.setState({ showRestart: true }), 500);
     }
   }
 
@@ -143,8 +145,17 @@ class Grid extends Component {
   render() {
     return (
       <div>
+        {this.renderPlayAgain()}
         {this.renderClouds()}
         <div className="container">{this.renderTable()}</div>
+        <a
+          href="https://github.com/BenjaminFalcon27/Memory-Card-Game"
+          target="_blank"
+          className="github"
+        >
+          <FaGithub />
+          <p>Visit the github project</p>
+        </a>
       </div>
     );
   }
@@ -206,7 +217,16 @@ class Grid extends Component {
   }
 
   renderPlayAgain() {
-    return <div className="play-again"></div>;
+    if (this.state.showRestart === true) {
+      return (
+        <div className="restart-container">
+          <h2> Congratulations! Lets start a new game!</h2>
+          <a href="">
+            <button className="restart">Restart</button>
+          </a>
+        </div>
+      );
+    }
   }
 }
 

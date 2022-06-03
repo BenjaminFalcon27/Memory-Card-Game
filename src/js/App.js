@@ -13,7 +13,7 @@ function App() {
         @import url('http://fonts.cdnfonts.com/css/new-super-mario-font-u');
       </style>
       <header className="App-header">
-        <h1 className="game-title">Memory Card Game</h1>
+        <h1 className="game-title">Mario Memory Card Game</h1>
       </header>
       <Grid />
     </div>

@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=VT323);
 body {
   margin: auto;
   background: #00b4ff;
@@ -59,15 +60,49 @@ z-index: -1;
   opacity: 0.5;
 }
 
-.anti-cheat {
-  background:red;
-  position:absolute;
-  top:0px;
-  right:0px;
-  bottom:0px;
-  left:0px;
+.restart {
+  font-family: 'VT323', monospace ;
+  font-size: 40px;
+  background: #881400;
+	border-bottom: 6px inset rgba(0,0,0,.5);
+	border-left: 6px inset rgba(0,0,0,.5);
+	border-right: 6px inset rgba(255,255,255,.5);
+	border-top: 6px inset rgba(255,255,255,.5);
+	box-sizing: border-box;
+	color: white;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 2.2rem;
+	margin: 1rem;
+	min-width: 200px;
+	padding: .5rem;
+	text-transform: uppercase;
+	width: auto;
+  
+}
+.restart:hover {
+  background: #A81000;
+}
+.restart-container {
+  margin: auto;
+  text-align: center;
+  font-family: 'New Super Mario Font U', sans-serif;
 }
 
+.github {
+  color: #171515;
+  margin: auto;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  text-decoration: none;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
+}
+
+.github p {
+  display: inline;
+  margin-left: 5px;
+}
 
 /* CARDS */
 
